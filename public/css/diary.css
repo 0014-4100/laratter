@@ -1,0 +1,260 @@
+body {
+    font-family: sans-serif;
+    background-color: #f3eadf;
+    color: #4b382a;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #6b4f3a;
+    margin-bottom: 30px;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.8;
+    text-align: center;
+}
+
+a {
+    color: #6b4f3a;
+    text-decoration: none;
+}
+
+button {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    background-color: #8b6f55;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #6b4f3a;
+}
+
+input[type="date"],
+textarea,
+input[type="file"] {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 8px;
+    margin-bottom: 20px;
+}
+
+input[type="date"],
+textarea {
+    padding: 12px;
+    border: 1px solid #cdbba8;
+    border-radius: 8px;
+    background-color: #fffaf5;
+    color: #4b382a;
+    font-size: 16px;
+}
+
+textarea {
+    height: 120px;
+    resize: vertical;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 15px auto;
+    border-radius: 12px;
+}
+
+form {
+    background-color: #fffaf5;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(75, 56, 42, 0.12);
+}
+
+label {
+    color: #6b4f3a;
+    font-weight: bold;
+}
+/* =========================
+   カレンダー
+========================= */
+
+h2 {
+    text-align: center;
+    color: #6b4f3a;
+    margin: 25px 0 15px;
+}
+
+.calendar {
+    width: 100%;
+    max-width: 650px;
+    margin: 0 auto;
+    background-color: #fffaf5;
+    border-radius: 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    box-shadow: 0 3px 10px rgba(75, 56, 42, 0.12);
+}
+
+/* 曜日 */
+.calendar-weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+    font-weight: bold;
+    color: #6b4f3a;
+    margin-bottom: 5px;
+}
+
+.calendar-weekdays div {
+    padding: 8px 0;
+}
+
+/* 日付部分 */
+.calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+}
+
+/* 1日分のマス */
+.calendar-day {
+    aspect-ratio: 1 / 1;
+    border: 1px solid #e1d2c3;
+    border-radius: 8px;
+    background-color: #fdf8f2;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+
+    padding-top: 8px;
+    box-sizing: border-box;
+
+    color: #4b382a;
+    font-size: 15px;
+}
+
+/* 存在しない日 */
+.calendar-day.empty {
+    border: none;
+    background-color: transparent;
+}
+/* 日記がある日のマス */
+.calendar-day.has-diary {
+    background-color: #ead8c5;
+    border: 2px solid #8b6f55;
+}
+
+/* 日記がある日のリンク */
+.calendar-day.has-diary a {
+    width: 100%;
+    height: 100%;
+    color: #6b4f3a;
+    text-decoration: none;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* 日付 */
+.day-number {
+    font-weight: bold;
+}
+
+/* 日記マーク */
+.diary-mark {
+    color: #a66a4c;
+    font-size: 14px;
+    margin-top: 5px;
+}
+/* カレンダーの月切り替え */
+.calendar-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 15px;
+}
+
+.calendar-header h2 {
+    margin: 0;
+}
+
+.calendar-header a {
+    padding: 8px 12px;
+    border-radius: 8px;
+    background-color: #ead8c5;
+    color: #6b4f3a;
+    font-size: 14px;
+}
+
+.calendar-header a:hover {
+    background-color: #d8c0a8;
+}
+/* =========================
+   日記詳細
+========================= */
+
+.diary-info {
+    margin: 25px auto;
+    max-width: 500px;
+}
+
+/* 日付 */
+.diary-date {
+    background-color: #ead8c5;
+    color: #6b4f3a;
+    padding: 15px 20px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.diary-date span,
+.diary-comment span {
+    display: block;
+    font-size: 13px;
+    margin-bottom: 5px;
+    color: #8b6f55;
+}
+
+/* コメント */
+.diary-comment {
+    background-color: #fffaf5;
+    border: 1px solid #e1d2c3;
+    color: #4b382a;
+    padding: 20px;
+    border-radius: 10px;
+    min-height: 60px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+/* 一覧に戻るボタン */
+.back-button {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.back-button a {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 8px;
+    background-color: #8b6f55;
+    color: white;
+    font-weight: bold;
+}
+
+.back-button a:hover {
+    background-color: #6b4f3a;
+}
